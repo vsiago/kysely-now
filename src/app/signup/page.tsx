@@ -3,22 +3,30 @@ import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader,
 import { Input } from '@/components/ui/input'
 import { Label } from '@radix-ui/react-label'
 
-export default function LoginPage() {
-    
+export default function RegisterPage() {
     return (
-        <form action={} className="min-h-screen bg-gray-50 flex flex-col">
+        <div className="min-h-screen bg-gray-50 flex flex-col">
             <main className="flex-1 container max-w-7xl mx-auto flex items-center justify-center px-4">
                 <Card className="w-full max-w-sm">
                     <CardHeader className='text-center'>
                         <CardTitle className='text-xl'>Logo</CardTitle>
                         <CardDescription>
-                            Acesse sua conta
+                            Cadastre sua conta
                         </CardDescription>
        
                     </CardHeader>
                     <CardContent>
                         <form>
                             <div className="flex flex-col gap-6">
+                            <div className="grid gap-2">
+                                    <Label htmlFor="email">Nome</Label>
+                                    <Input
+                                        id="nome"
+                                        type="nome"
+                                        placeholder="Digite seu nome"
+                                        required
+                                    />
+                                </div>
                                 <div className="grid gap-2">
                                     <Label htmlFor="email">E-mail</Label>
                                     <Input
@@ -29,19 +37,18 @@ export default function LoginPage() {
                                     />
                                 </div>
                                 <div className="grid gap-2">
-                                    <div className="flex items-center">
-                                        <Label htmlFor="password">Password</Label>
-                                        <a
-                                            href="#"
-                                            className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                                        >
-                                            Esqueci minha senha
-                                        </a>
-                                    </div>
+                                <Label htmlFor="password">Senha</Label>
                                     <Input 
                                     id="password" 
                                     type="password" 
                                     placeholder='Digite sua senha'
+                                    required />
+                                </div>
+                                <div className="grid gap-2">
+                                    <Input 
+                                    id="password" 
+                                    type="password" 
+                                    placeholder='Repita sua senha'
                                     required />
                                 </div>
                             </div>
@@ -49,14 +56,14 @@ export default function LoginPage() {
                     </CardContent>
                     <CardFooter className="flex-col gap-2">
                         <Button type="submit" className="w-full">
-                            Login
+                            Cadastrar
                         </Button>
                         <Button variant="outline" className="w-full">
-                            Login with Google
+                            Cadastrar e logar com Google
                         </Button>
                     </CardFooter>
                 </Card>
             </main>
-        </form>
+        </div>
     )
 }

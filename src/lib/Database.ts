@@ -13,11 +13,6 @@ const dialect = new PostgresDialect({
       }),
 })
 
-// A interface do banco de dados é passada para o construtor do Kysely e, a partir de agora, o Kysely
-// conhece a estrutura do seu banco de dados.
-// O dialeto é passado para o construtor do Kysely e, a partir de agora, o Kysely sabe como
-// se comunicar com o seu banco de dados.
-
 export const db = new Kysely<Database>({
     dialect,
 })
